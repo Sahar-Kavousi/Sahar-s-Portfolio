@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <header class="header-container">
+    <div class="header-logo-container">
+      <a href="/">
+        <!-- </logo> -->
+        <img class="logo" src="./Images/Logo .svg" alt="design spring logo">
+      </a>
+    </div>
+
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="">Portfolio</a>
+      <a href="about.html">About me</a>
+      <a href="">Contact</a>
+    </nav>
+
+    <div class="hedear-socialmedia-container LinkedIn">
+      <a href="https://www.linkedin.com/in/sahar-kavousi-1730b8227"" target=" _blank">
+        <img src="./Images/icons8-linkedin-100.svg" />
+      </a>
+    </div>
+
+  </header>
+
+  <main>
+
+    <div class="about-me-section-main-container">
+      <div class="about-me-description-title">
+        <h1>
+          About Me
+        </h1>
+      </div>
+      <div class="description-picture-container">
+
+
+        <div class="about-me-description">
+
+          <p>
+            In the dynamic world of design and technology, I'm your friendly neighborhood UX designer with a solid two
+            years of experience under my belt. My journey in the field of User Experience design has been nothing short
+            of an exhilarating adventure, filled with endless curiosity and an unyielding desire for self-improvement.
+          </p>
+          <br>
+          <p>
+            I kicked off my career with a vision - to build a strong connection between design and development. This led
+            me to the exciting path of learning coding. By adding front-end development skills to my toolkit, I've been
+            able to create a special bond between design and code. This dual expertise has not only enriched my
+            understanding of the complex coding world but has also empowered me to deliver user-centric, technically
+            sound, and visually captivating solutions in my UX design work.
+          </p>
+          <br>
+          <p>
+            My commitment to continuous learning and professional growth is a cornerstone of my professional identity. I
+            am confident that my journey as a UX designer and front-end developer is just beginning, and I eagerly
+            anticipate further opportunities to refine and apply my skills in creating innovative, user-centric
+            solutions in the ever-evolving landscape of design and technology.
+          </p>
+
+        </div>
+        <div class="profile-picture">
+          <!-- <img src="./Images/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="profile image"> -->
+
+          <div class="circle-picture"></div>
+        </div>
+      </div>
+  </main>
+
+  <footer>
+
+    <div class="footer-container">
+      <div class="footer-get-in-touch-container">
+        <div class="get-in-touch-title">
+          <h2>Get in touch</h2>
+          <h1>Let's Work Together! </h1>
+        </div>
+        <div class="adress-email-phone">
+          <p>Cavendish Way,Victoria park,Wa 6100</p>
+
+          <a href="mailto:graphicdesignspring@gmail.com">graphicdesignspring@gmail.com <img src="">
+          </a>
+          <p>0404 976 009</p>
+        </div>
+
+      </div>
+      <div class="contact-us-container">
+
+        <div class="contact-us-form-container">
+          <form action="https://formspree.io/f/xeqbvkrp" method="POST">
+            <div class="contact-us-title">
+
+              <h2>Contact Us</h2>
+
+            </div>
+
+            <!-- <div> -->
+            <label for="yourname">Name</label>
+            <input type="text" name="yourname" placeholder="Your name">
+
+            <label for="youremail">Email Address</label>
+            <input type="text" name="youremail" placeholder="Your email">
+
+            <label for="message">Message</label>
+            <textarea class="text-area" name="message" placeholder="Type here..."></textarea>
+
+            <div class="submit_container">
+
+              <input class="submit-button" type="submit" value="Submit">
+            </div>
+            <p id="my-form-status"></p>
+        </div>
+        </form>
+      </div>
+    </div>
+  </footer>
+</body>
+<script>
+  var form = document.getElementById("contactUs-form");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+      } else {
+        response.json().then(data => {
+          if (Object.hasOwn(data, 'errors')) {
+            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+          } else {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          }
+        })
+      }
+    }).catch(error => {
+      status.innerHTML = "Oops! There was a problem submitting your form"
+    });
+  }
+  form.addEventListener("submit", handleSubmit)
+</script>
