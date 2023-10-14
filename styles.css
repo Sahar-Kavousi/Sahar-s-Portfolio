@@ -196,7 +196,7 @@ section .hero-section img {
 .block {
   overflow: hidden;
   background: var(--SmokyWhite);
-  padding: 1rem;
+  /* padding: 1rem; */
   margin: 0 0 1rem 0;
 }
 .block img {
@@ -207,8 +207,8 @@ section .hero-section img {
   margin: 0 1rem 0 0;
 }
 .block h4 {
-  margin: 0 0 0.5rem 2rem;
-  padding: 20px;
+  padding-bottom: 20px;
+  margin: 0%;
   font-size: 20px;
   font-weight: bold;
 }
@@ -341,4 +341,62 @@ footer {
 .girl-image {
   justify-content: space-between;
   max-width: 35%;
+}
+/* media quierie */
+
+@media only screen and (max-width: 600px) {
+  body {
+    /* box-sizing: initial; */
+  }
+  .header-container {
+    /* display: flex;
+    flex-direction: column; */
+  }
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .designer-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 40px;
+  }
+  .developer-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 40px;
+  }
+
+  .technical-skills-logo-img {
+    height: 80px;
+  }
+  .Technical-skills-logos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .block img {
+    width: 400px;
+    height: auto;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+  .block h4 {
+    padding-top: 40px;
+    /* margin: -10px; */
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

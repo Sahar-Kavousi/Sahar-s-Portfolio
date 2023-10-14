@@ -263,4 +263,24 @@
   form.addEventListener("submit", handleSubmit)
 </script>
 
+<!-- script for responsiveness of website -->
+<script>
+  const hamburger = document.getElementById("myLinks");
+  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+  function myFunction() {
+    // if (hamburger.style.display === "block") {
+    //   hamburger.style.display = "none";
+    // } else {
+    //   hamburger.style.display = "block";
+    // }
+    if (hamburger.classList.contains('hide-menu')) {
+      hamburger.classList.remove;
+      ('hide-menu')
+    } else {
+      hamburger.classList.add('hide-menu')
+    }
+
+  }
+</script>
+
 </html>
