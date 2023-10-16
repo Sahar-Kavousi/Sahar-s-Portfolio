@@ -18,16 +18,16 @@
       </a>
     </div>
 
-
-    <nav>
+<button class="hamburger" type="button" title="menu toggle" onClick="menuToggle()"><img src="./Images/hamburger.svg"></button>
+    <nav id="nav-menu">
       <a href="index.html">Home</a>
       <a href="#title-second-container">Portfolio</a>
       <a href="about.html">About me</a>
       <a href="#footer-container">Contact</a>
     </nav>
 
-    <div class="hedear-socialmedia-container LinkedIn">
-      <a href="https://www.linkedin.com/in/sahar-kavousi-1730b8227"" target=" _blank">
+    <div class="hedear-socialmedia-container-linkedIn">
+      <a  href="https://www.linkedin.com/in/sahar-kavousi-1730b8227" target=" _blank">
         <img src="./Images/icons8-linkedin-100.svg" />
       </a>
     </div>
@@ -263,21 +263,14 @@
   form.addEventListener("submit", handleSubmit)
 </script>
 
-<!-- script for responsiveness of website -->
 <script>
-  const hamburger = document.getElementById("myLinks");
+  const menu = document.getElementById("nav-menu");
   /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-  function myFunction() {
-    // if (hamburger.style.display === "block") {
-    //   hamburger.style.display = "none";
-    // } else {
-    //   hamburger.style.display = "block";
-    // }
-    if (hamburger.classList.contains('hide-menu')) {
-      hamburger.classList.remove;
-      ('hide-menu')
+  function menuToggle() {
+    if (menu.classList.contains('show-menu')) {
+      menu.classList.remove('show-menu')
     } else {
-      hamburger.classList.add('hide-menu')
+      menu.classList.add('show-menu')
     }
 
   }
