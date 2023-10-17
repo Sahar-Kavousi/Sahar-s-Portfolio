@@ -20,7 +20,7 @@
 
 <button class="hamburger" type="button" title="menu toggle" onClick="menuToggle()"><img src="./Images/hamburger.svg"></button>
     <nav id="nav-menu">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <a href="#title-second-container">Portfolio</a>
       <a href="about.html">About me</a>
       <a href="#footer-container">Contact</a>
@@ -45,8 +45,11 @@
           With a keen eye for design and a focus on enhancing usability, I strive to craft intuitive solutions that
           delight users and drive results.
         </p>
+  
+  <!-- <button class="Get-in-touch"> Get In Touch</button> -->
+  <!-- <a href="#footer-container" class="Get-in-touch">Get In Touch</a> -->
+  <a href="#footer-container"" class="Get-in-touch">Get In Touch</a>
 
-        <button class="Get-in-touch"> Get In Touch</button>
       </div>
       <!-- <div class="profile-picture">
         <img src="./Images/christopher-campbell-rDEOVtE7vOs-unsplash.jpg" alt="">
@@ -54,7 +57,7 @@
       </div> -->
       <div class="developer-section">
         <h1>
-          < Developer />
+          &lt; Developer />
         </h1>
         <p>
 
@@ -179,10 +182,9 @@
   </main>
 
   <footer>
-
     <div id="footer-container" class="footer-container">
       <div class="footer-get-in-touch-container">
-        <div class="get-in-touch-title">
+        <div id="get-in-touch-title" class="get-in-touch-title">
           <h2>Get in touch</h2>
           <h1>Let's Work Together! </h1>
         </div>
@@ -229,51 +231,11 @@
 
 
   </footer>
+  <!-- importing js from script file -->
+  <!-- added this scripts at the buttom of this page to stop the page from loading slowly -->
+  <script src="./scripts.js">
+    
+  </script>
 </body>
-<script>
-  var form = document.getElementById("contactUs-form");
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    var status = document.getElementById("my-form-status");
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        status.innerHTML = "Thanks for your submission!";
-        form.reset()
-      } else {
-        response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-          } else {
-            status.innerHTML = "Oops! There was a problem submitting your form"
-          }
-        })
-      }
-    }).catch(error => {
-      status.innerHTML = "Oops! There was a problem submitting your form"
-    });
-  }
-  form.addEventListener("submit", handleSubmit)
-</script>
-
-<script>
-  const menu = document.getElementById("nav-menu");
-  /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-  function menuToggle() {
-    if (menu.classList.contains('show-menu')) {
-      menu.classList.remove('show-menu')
-    } else {
-      menu.classList.add('show-menu')
-    }
-
-  }
-</script>
 
 </html>

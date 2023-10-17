@@ -18,21 +18,23 @@
       </a>
     </div>
 
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="">Portfolio</a>
+<button class="hamburger" type="button" title="menu toggle" onClick="menuToggle()"><img src="./Images/hamburger.svg"></button>
+    <nav id="nav-menu">
+      <a href="/">Home</a>
+      <a href="/#title-second-container">Portfolio</a>
       <a href="about.html">About me</a>
-      <a href="">Contact</a>
+      <a href="/#footer-container">Contact</a>
     </nav>
 
-    <div class="hedear-socialmedia-container LinkedIn">
-      <a href="https://www.linkedin.com/in/sahar-kavousi-1730b8227"" target=" _blank">
+    <div class="hedear-socialmedia-container-linkedIn">
+      <a  href="https://www.linkedin.com/in/sahar-kavousi-1730b8227" target=" _blank">
         <img src="./Images/icons8-linkedin-100.svg" />
       </a>
     </div>
 
+
   </header>
+
 
   <main>
 
@@ -97,7 +99,7 @@
       <div class="contact-us-container">
 
         <div class="contact-us-form-container">
-          <form action="https://formspree.io/f/xeqbvkrp" method="POST">
+          <form action="https://formspree.io/f/xeqbvkrp" method="POST" id="contactUs-form">
             <div class="contact-us-title">
 
               <h2>Contact Us</h2>
@@ -124,36 +126,7 @@
       </div>
     </div>
   </footer>
+  <script src="/scripts.js">
+    
+  </script>
 </body>
-<script>
-  var form = document.getElementById("contactUs-form");
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    var status = document.getElementById("my-form-status");
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).then(response => {
-      if (response.ok) {
-        status.innerHTML = "Thanks for your submission!";
-        form.reset()
-      } else {
-        response.json().then(data => {
-          if (Object.hasOwn(data, 'errors')) {
-            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-          } else {
-            status.innerHTML = "Oops! There was a problem submitting your form"
-          }
-        })
-      }
-    }).catch(error => {
-      status.innerHTML = "Oops! There was a problem submitting your form"
-    });
-  }
-  form.addEventListener("submit", handleSubmit)
-</script>
